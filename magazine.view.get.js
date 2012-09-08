@@ -1,59 +1,58 @@
-'/news'
-'Get news information'
+'/articles'
+'Get articles information'
 'request'
 // user info come from cookies
 {
   isForward: true,
   startId: 11,
-  length: 5
+  length: 5,
+  locale: 'zhCN'
 }
-'response'
+'response' 
 [{
   id: 10,
   isBookmarked: false,
-  createAt: 9837291, // seconds to now
-  updateAt: 2342355, // seconds to now
-  imageUrl: 'http://imageUrl',
+  title: 'atmos x Reebok INSTA PUMP FURY 雪豹 別注鞋款',
+  updateAt: 2342355,
+  // seconds to now
+  updateAtString: '二天前',
+  photos: [{
+    url: 'http://imageUrl1',
+    caption: 'xxx'
+  }, {
+    url: 'http://imageUrl2',
+    caption: 'yyy'
+  }],
   summary: '经典鞋款⋯⋯',
   thumbUp: 314,
   thumbDown: 27,
   isThumbUp: false,
   isThumbDown: false,
-  product: {
+  about: {
     id: 1,
     name: 'Insta Pump Fury',
-    variation: {
-      id: 1,
-      name: '雪豹 别注鞋款'
+    type: {
+      type: 1
+      name: 'product'
     },
-    serie: {
-      id: 1,
-      name: 'Insta Pump Fury',
-      isLiked: false
+    varations: [{}],
+    serie: {},
+    product: {
+      id: 3
+      name: 'C350'
+      isSubscribed: false
     },
     brands: [{
       id: 1,
       name: 'Reebok',
-      isLiked: false
+      isSubscribed: false
     }, {
       id: 2,
       name: 'atmos',
-      isLiked: false
+      isSubscribed: false
     }]
   },
-  comments: [{
-    id: 1,
-    createAt: 123123,
-    updateAt: 8032980,
-    userId: 1,
-    content: 'Good!'
-  }, {
-    id: 2,
-    createAt: 423423,
-    updateAt: 43534,
-    userId: 2,
-    content: 'I like it!'
-  }]
+  totalComments: 15
 }, {
   id: 7
 }, {
@@ -62,4 +61,26 @@
   id: 2
 }, {
   id: 1
+}]
+
+'/comments'
+'Get comments information'
+'request'
+// user info come from cookies
+{
+  articleId: 1
+}
+'response'
+[{
+  id: 1,
+  createAt: 123123,
+  updateAt: 8032980,
+  userId: 1,
+  content: 'Good!'
+}, {
+  id: 2,
+  createAt: 423423,
+  updateAt: 43534,
+  userId: 2,
+  content: 'I like it!'
 }]
